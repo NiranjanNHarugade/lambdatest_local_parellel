@@ -10,9 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class InputForm {
-	
-	
-	
 	@FindBy(xpath="//button[text()='Submit']")private WebElement submit;
 	@FindBy(xpath="//input[@id='name']")private WebElement name;
 	@FindBy(id="inputEmail4")private WebElement email;
@@ -41,8 +38,8 @@ public class InputForm {
 		js.executeScript("window.scroll(0,400)", "");
 		Thread.sleep(500);
 		submit.click();
-		String ErrorMsg=name.getAttribute("validationMessage");
-		return ErrorMsg;
+		String ErrorMsg=name.getAttribute("validationMessage");          
+		return ErrorMsg; 
 	}
 	
 	

@@ -1,14 +1,10 @@
 package lambdatest;
-
-
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-
 import base.SetUp_config;
 import pom.DragAndDrop;
 import pom.FormPage;
@@ -22,20 +18,14 @@ public class Assignment_1 extends SetUp_config {
 	DragAndDrop DP;
 	InputForm IF;
 	 
-	
- 
 	 @BeforeClass @Parameters({"browser"})
 	public void Openbrowser(String browser) {
 	
 		launch_browser(browser);
-		
-		
-		
 		HM = new HomePage(driver);
 		FP = new FormPage(driver);
 		DP = new DragAndDrop(driver);
-		IF = new InputForm(driver);
-		
+		IF = new InputForm(driver);	
 	}
 
 	@Test(priority = 1)
@@ -65,10 +55,8 @@ public class Assignment_1 extends SetUp_config {
 		String Exp_Value = "95";
 		String Act_Value = DP.AdjustSlider(driver,js, act);
 		
-		
 		Assert.assertEquals(Act_Value, Exp_Value, "Range Not showing currect value");
 		Reporter.log("Slider possition set to = " + Exp_Value, true);
-
 	}
 
 	@Test(priority = 3)

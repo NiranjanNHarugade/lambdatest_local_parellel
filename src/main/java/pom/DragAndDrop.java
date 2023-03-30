@@ -8,8 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DragAndDrop {
-
-	@FindBy(xpath = "//div[@class='sp__range sp__range-success']/input")
+	@FindBy(xpath = "//div[@class='sp__range sp__range-success']")
 	WebElement slider;
 	@FindBy(xpath = "//output[@id='rangeSuccess']")
 	WebElement percentage;
@@ -18,10 +17,11 @@ public class DragAndDrop {
 		PageFactory.initElements(driver, this);
 	}
 
-	public String AdjustSlider(WebDriver driver,JavascriptExecutor js,Actions act) throws InterruptedException {
+	public String AdjustSlider(WebDriver driver, JavascriptExecutor js, Actions act) throws InterruptedException {
 		Thread.sleep(2000);
 		js.executeScript("window.scroll(0,400)", "");
-		act.moveToElement(slider, 118, 0).click().build().perform();
+		Thread.sleep(2000);
+		act.dragAndDropBy(slider, 98, 0).build().perform();
 		String SliderValue = percentage.getText();
 		return SliderValue;
 	}

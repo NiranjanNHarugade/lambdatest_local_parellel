@@ -10,18 +10,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import com.beust.jcommander.Parameter;
-import com.beust.jcommander.Parameters;
+
 
 public class SetUp_config {
-
-	
-	
 	public  WebDriver driver=null;
 	public JavascriptExecutor js;
 	public Actions act;
 	
-
 	public void launch_browser(String Name) 
 	{
 		if(Name.equalsIgnoreCase("chrome"))
@@ -43,5 +38,7 @@ public class SetUp_config {
 	act = new Actions(driver);
 	}
 	
+	
+
 	
 }

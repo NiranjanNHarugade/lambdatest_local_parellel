@@ -6,6 +6,7 @@
       <class name="lambdatest.Assignment_1">
         <methods>
           <include name="teardown"/>
+          <include name="Scenario_3"/>
           <include name="Scenario_2"/>
           <include name="Scenario_1"/>
           <include name="Openbrowser"/>
